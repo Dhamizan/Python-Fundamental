@@ -1,3 +1,5 @@
+# Variabel
+
 sapa = "Hallo"
 nama = "Dio"
 

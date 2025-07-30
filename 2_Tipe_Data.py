@@ -1,3 +1,5 @@
+# Tipe Data
+
 data_string = "Hallo Dio"
 print(type(data_string))
 print(data_string)
