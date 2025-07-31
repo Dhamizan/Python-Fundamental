@@ -1,0 +1,1 @@
+print(f"__name__ dari file Tes.py adalah: {__name__}")
