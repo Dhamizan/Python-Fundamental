@@ -20,3 +20,8 @@ hari = {
 
 hari_inggris = data_waktu.strftime('%A')
 print(f"Hari Indonesia: {hari[hari_inggris]}")
+
+import io
+
+file = io.open("file_text.txt","r")
+print(file.read())
