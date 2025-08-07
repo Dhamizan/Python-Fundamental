@@ -1,0 +1,36 @@
+def sunting_data():
+    lihat_data()
+    
+    nim_target = input("Masukkan NIM yang ingin diubah: ")
+    ditemukan = False
+    
+    try:
+        with open(Database.DB_NAME, 'r+', encoding='utf-8') as file:
+            lines = file.readlines()
+            file.seek(0)
+            file.truncate()
+
+            for i in range(len(lines)):
+                data = lines[i].strip().split(',')
+
+                if data[0] == nim_target:
+                    print(f"\nData ditemukan: {lines[i].strip()}")
+                    
+                    nama_baru = input("Masukkan nama baru: ")
+                    alamat_baru = input("Masukkan alamat baru: ")
+                    email_baru = input("Masukkan email baru: ")
+                    no_hp_baru = input("Masukkan no hp baru: ")
+
+                    data_baru = f"{nim_target},{nama_baru},{alamat_baru},{email_baru},{no_hp_baru}\n"
+                    lines[i] = data_baru
+                    ditemukan = True
+                    print(f"Data berhasil diperbarui: {data_baru.strip()}")
+                    break
+
+            file.writelines(lines)
+
+            if not ditemukan:
+                print("Data dengan NIM tersebut tidak ditemukan.")
+
+    except Exception as e:
+        print("Gagal menyunting data:", str(e))
