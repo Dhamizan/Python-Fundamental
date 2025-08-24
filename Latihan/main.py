@@ -1,5 +1,4 @@
 import os
-import Package as pack
 from Package import Database as db
 from Package import Fungsi
 
@@ -9,8 +8,8 @@ if __name__ == "__main__":
     
     while True:
         match sistem:
-            case 'cls': sistem.system('cls')
-            case 'posix': sistem.system('clear')
+            case 'nt': os.system('cls')
+            case 'posix': os.system('clear')
             
         print(f"{'='*10} Daftar Mahasiswa Universitas Fiksi {'='*10}")
         

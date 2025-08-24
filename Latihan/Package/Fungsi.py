@@ -2,9 +2,22 @@ from . import Database
 import random
 import string
 
-def random_string(panjang:int) -> str:
-    hasil = ''.join(random.choice(string.ascii_letters) for i in range(panjang))
+def random_string(p:int) -> str:
+    hasil = ''
+    for i in range(p):
+        hasil.join(random.choice(string.ascii_letters))
+        
     return hasil
+
+# def random_string(p:int) -> str:
+#     hasil = ''
+#     for i in range(p):
+#         hasil += random.choice(string.ascii_letters)
+#     return hasil
+
+# def random_string(panjang:int) -> str:
+#     hasil = ''.join(random.choice(string.ascii_letters) for i in range(panjang))
+#     return hasil
 
 def read():
     try:
@@ -113,7 +126,7 @@ def hapus_data():
         with open(Database.DB_NAME, 'r+', encoding='utf-8') as file:
             lines = file.readlines()
             file.seek(0)
-            file.truncate
+            file.truncate()
             
             for i in range(len(lines)):
                 data = lines[i].strip().split(',')
